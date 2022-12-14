@@ -54,30 +54,32 @@
           <!-- perulangannya dari sini -->
           <?php foreach($rating as $r):?>
             <?php if($r['nilai_rating'] != null) : ?>
-              <hr>
-              <div class="headercomment">
-                <div class="nama">
-                  <?= $r['fullname'] ?? 'anonim';?>
+              <?php if($r['nilai_rating'] != 0) : ?>
+                <hr>
+                <div class="headercomment">
+                  <div class="nama">
+                    <?= $r['fullname'] ?? 'anonim';?>
+                  </div>
+                  <div class="ratingg">
+                      <?php 
+                      $rate = (int)$r['nilai_rating'];
+                      $rateminus = 5 - $rate;
+                      // var_dump($rateminus);
+                      if($rate > 0):  ?>
+                          <?php for($i=0; $i< $rate; $i++){ ?>
+                          <img src="/Horizon/Assets/icon/rating.png" alt="" />
+                          <?php } ?>
+                          <?php for($i=0; $i< $rateminus; $i++){ ?>
+                          <img src="/Horizon/Assets/icon/ratingg.png" alt="" />
+                          <?php } ?>
+                      <?php endif; ?>
+                        
+                  </div>
                 </div>
-                <div class="ratingg">
-                    <?php 
-                    $rate = (int)$r['nilai_rating'];
-                    $rateminus = 5 - $rate;
-                    // var_dump($rateminus);
-                    if($rate > 0):  ?>
-                        <?php for($i=0; $i< $rate; $i++){ ?>
-                        <img src="/Horizon/Assets/icon/rating.png" alt="" />
-                        <?php } ?>
-                        <?php for($i=0; $i< $rateminus; $i++){ ?>
-                        <img src="/Horizon/Assets/icon/ratingg.png" alt="" />
-                        <?php } ?>
-                    <?php endif; ?>
-                      
+                <div class="isicomment">
+                  <?= $r['komentar']; ?>
                 </div>
-              </div>
-              <div class="isicomment">
-                <?= $r['komentar']; ?>
-              </div>
+              <?php endif; ?>
             <?php endif; ?>
           <?php endforeach; ?>
 
