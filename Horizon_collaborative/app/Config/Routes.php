@@ -35,6 +35,8 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+$routes->get('/formula', 'Home::formula'); //collaborative filtering
+
 $routes->get('/', 'Home::index');
 $routes->get('/homeedit', 'Home::homeedit', ['filter' => 'role:user']);
 $routes->get('/tour', 'Home::tour', ['filter' => 'role:user']);
@@ -97,10 +99,6 @@ $routes->get('/transaksiadmin', 'AdminTransaksi::index', ['filter' => 'role:admi
 $routes->get('/transaksiadmin/index', 'AdminTransaksi::index', ['filter' => 'role:admin']);
 $routes->get('/transaksiadmin/view/(:num)', 'AdminTransaksi::view/$1', ['filter' => 'role:admin']);
 $routes->post('/transaksiupdate/(:num)', 'AdminTransaksi::update/$1', ['filter' => 'role:admin']);
-
-// $routes->post kalau mau buat database
-// $routes->delete kalau mau hapus database??
-
 
 
 /*
