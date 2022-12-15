@@ -8,15 +8,26 @@ class M_Produk extends Model
 {
     protected $table      = 'produk';
     protected $primaryKey = 'id_produk';
-    protected $allowedFields = ['id_kategori', 'nama_produk', 'deskripsi_produk', 'harga', 'sampul'];
+    protected $allowedFields = ['id_kategori', 'nama_produk', 'deskripsi_produk', 'harga', 'sampul', 'nilai_mae'];
     protected $useTimestamps = true;
+    protected $maeColumnName = 'nilai_mae';
 
-    public function getSemuaProduk(){
-        $query =  $this->db->table('produk')
-        ->select('*')
-        ->get();  
-        return $query;
+    public function getProdukPredictions()
+    {
+        $ratingProduk = new M_Rating();
+        $ratingProduk = $ratingProduk->select('id_produk')
+            ->distinct('id_produk')
+            ->get()
+            ->getResultArray();
+
+        foreach ($ratingProduk as $key => $value) {
+            $id_produks[$key] = $value['id_produk'];
+        }
+
+        return $this->whereIn('id_produk', $id_produks)
+            ->findAll();
     }
+
     public function getProdukKategori()
     {
         $query =  $this->db->table('produk')
@@ -53,6 +64,5 @@ class M_Produk extends Model
         return $query;
     }
     
-
-
+    
 }

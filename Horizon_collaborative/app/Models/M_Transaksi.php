@@ -23,29 +23,6 @@ class M_Transaksi extends Model
     ];
     protected $useTimestamps = true;
 
-    // public function detailtransaksi($id){
-    //     $query =  $this->db->table('transaksi')
-    //     ->select('
-    //                 id_transaksi,
-    //                 transaksi.id_produk as idproduk,
-    //                 nama_produk,
-    //                 item,
-    //                 harga,
-    //                 total_biaya,
-    //                 tanggal_tour,
-    //                 jenis_transaksi,
-    //                 status_transaksi,
-    //                 bukti_transaksi,
-    //                 status_tour,
-    //                 transaksi.created_at as created,
-    //                 transaksi.updated_at as updated,
-    //     ')
-    //     ->join('produk', 'produk.id_produk = transaksi.id_produk')
-    //     ->where('transaksi.id = ' . $id)
-    //     ->get();  
-    //     return $query;
-    // }
-
     public function detailtransaksi($id){
         $query =  $this->db->table('transaksi')
         ->select('

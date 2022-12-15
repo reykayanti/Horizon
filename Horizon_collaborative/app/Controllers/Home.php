@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Controllers;
+
 use App\Models\M_Produk;
 use App\Models\M_Kategori;
 use App\Models\M_Rating;
+use App\Libraries\Prediction;
 
 class Home extends BaseController
 {
@@ -128,7 +130,18 @@ class Home extends BaseController
         return view('user/Detail', $data);
     }
 
-    
+    public function formula()
+    {
+        $predictionClass = new Prediction;
+        $predictionClass->update();
 
+        
+        $data = [
+            'predictionClass' => $predictionClass,
+           
+        ];
+
+        return view('home/formula', $data);
+    }
 
 }

@@ -8,10 +8,15 @@ class M_Rating extends Model
 {
     protected $table      = 'rating';
     protected $primaryKey = 'id_rating';
-    protected $allowedFields = ['id_produk', 'id', 'nilai_rating', 'komentar'];
+    protected $allowedFields = ['id_rating', 'id_produk', 'nilai_rating', 'komentar'];
     protected $useTimestamps = true;
-    protected $createdField  = 'created_rating';
-    protected $updatedField  = 'updated_rating';
+
+    public function getRatingPredictions()
+    {
+        return $this->where('id IS NOT NULL', null, false)
+            ->where('id_produk IS NOT NULL', null, false)
+            ->findAll();
+    }
 
     public function getRatingInfo()
     {
@@ -27,16 +32,5 @@ class M_Rating extends Model
     {
         $query= $this->db->query( "SELECT produk.id_produk as idproduk, nama_produk, harga, deskripsi_produk, sampul , rating.id_produk as produk, SUM(rating.nilai_rating) as jumlah_rating, COUNT(rating.id) as jumlah_rater, SUM(rating.nilai_rating)/COUNT(rating.id) as rata_rating, nama_kategori FROM produk JOIN rating ON produk.id_produk = rating.id_produk JOIN kategori ON kategori.id_kategori = produk.id_kategori GROUP BY rating.id_produk DESC LIMIT 3 ");
         return $query;
-    }
-    
-    // Collaborative
-    public function usersRating(){
-        $query =  $this->db->table('rating')
-        ->select('users.id, username')
-        ->join('users','rating.id=users.id')
-        ->groupBy('rating.id')
-        ->get();  
-        return $query;
-
     }
 }

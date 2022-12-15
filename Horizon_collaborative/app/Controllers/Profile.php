@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Controllers;
-use App\Models\M_Users;
+use App\Models\M_User;
 use PhpParser\Node\Expr\AssignOp\Mul;
 
 class Profile extends BaseController
@@ -11,7 +11,7 @@ class Profile extends BaseController
     public function __construct()
     {
         $this->home      = new Home();
-        $this->mUsers      = new M_Users();
+        $this->mUsers      = new M_User();
     }
 
     public function index()
