@@ -28,7 +28,7 @@
                             <?php 
                             $rate = (int)$prod['rata_rating'];
                             $rateminus = 5 - $rate;
-                            // var_dump($rateminus);
+                            // var_dump($prod['rata_rating']);
 
                             if($rate > 0):  ?>
                                 <?php for($i=0; $i< $rate; $i++){ ?>

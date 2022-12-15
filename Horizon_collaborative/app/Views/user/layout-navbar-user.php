@@ -9,13 +9,13 @@
             <li>
               <a href="/trekking">Paket Trekking</a>
             </li>
-            <!-- <li>
+            <li>
             <abbr title="Cart">
               <a href="/cart">
                 <img src="/Horizon/Assets/icon/shopping-cart.png" width="20px" alt="" />
               </a>
               </abbr>
-            </li> -->
+            </li>
             <li>
             <abbr title="History">
               <a href="/history">

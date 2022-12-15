@@ -52,12 +52,12 @@
               <p>Transaksi</p>
             </a>
           </li>
-          <li>
+          <!-- <li>
             <a href="/">
               <div class="icon" style="background-image: url('/Horizon/Assets/icon/home.png')"></div>
               <p>Menu utama</p>
             </a>
-          </li>
+          </li> -->
           <li>
             <a href="/logout">
               <div class="icon" style="background-image: url('/Horizon/Assets/icon/logout.png')"></div>

@@ -46,8 +46,13 @@ class Home extends BaseController
             'kategori'  => $kategori,
             'role'      => $rolee
         ];
+        
+        if (in_groups('admin')){
+            return redirect()->to('/admin');
+        } else{
+            return view('user/Home', $data);
+        }
 
-        return view('user/Home', $data);
     }
 
     public function homeedit()

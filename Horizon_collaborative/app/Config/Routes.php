@@ -36,28 +36,29 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/homeedit', 'Home::homeedit');
-$routes->get('/tour', 'Home::tour');
-$routes->get('/trekking', 'Home::trekking');
-$routes->get('/detailtour', 'Home::detailtour'); 
-$routes->get('/detailtour/(:num)', 'Home::detailtour/$1'); //detail tour
+$routes->get('/homeedit', 'Home::homeedit', ['filter' => 'role:user']);
+$routes->get('/tour', 'Home::tour', ['filter' => 'role:user']);
+$routes->get('/trekking', 'Home::trekking', ['filter' => 'role:user']);
+$routes->get('/detailtour', 'Home::detailtour', ['filter' => 'role:user']); 
+$routes->get('/detailtour/(:num)', 'Home::detailtour/$1', ['filter' => 'role:user']); //detail tour
 
-$routes->get('/profile', 'Profile::index');
-$routes->post('/profile/update/(:num)', 'Profile::update/$1');
+$routes->get('/profile', 'Profile::index', ['filter' => 'role:user']);
+$routes->post('/profile/update/(:num)', 'Profile::update/$1', ['filter' => 'role:user']);
 
 // keranjang dan checkout
-$routes->get('/cart', 'Cart::index');
-$routes->get('/cart/index', 'Cart::index');
-$routes->post('/cart/addcart', 'Cart::addcart');
-$routes->get('/cart/delete/(:num)', 'Cart::delete/$1');
-$routes->get('/cart/prosescheckout/(:num)', 'Cart::prosescheckout/$1'); //sblm checkout
-$routes->post('/cart/addtransaksi/(:num)', 'Cart::addtransaksi/$1');
-$routes->get('/history', 'Cart::history');
-$routes->get('/detailhistory/(:num)', 'Cart::detailhistory/$1');
-$routes->post('/rate', 'Cart::rate');
-$routes->post('/uploadbuktibayar/(:num)', 'Cart::uploadbuktibayar/$1');
+$routes->get('/cart', 'Cart::index', ['filter' => 'role:user']);
+$routes->get('/cart/index', 'Cart::index', ['filter' => 'role:user']);
+$routes->post('/cart/addcart', 'Cart::addcart', ['filter' => 'role:user']);
+$routes->get('/cart/delete/(:num)', 'Cart::delete/$1', ['filter' => 'role:user']);
+$routes->get('/cart/prosescheckout/(:num)', 'Cart::prosescheckout/$1', ['filter' => 'role:user']); //sblm checkout
+$routes->post('/cart/addtransaksi/(:num)', 'Cart::addtransaksi/$1', ['filter' => 'role:user']);
+$routes->get('/history', 'Cart::history', ['filter' => 'role:user']);
+$routes->get('/detailhistory/(:num)', 'Cart::detailhistory/$1', ['filter' => 'role:user']);
+$routes->post('/rate', 'Cart::rate', ['filter' => 'role:user']);
+$routes->post('/uploadbuktibayar/(:num)', 'Cart::uploadbuktibayar/$1', ['filter' => 'role:user']);
 
 // admin
+// ADMIN
 $routes->get('/admin', 'AdminHome::index', ['filter' => 'role:admin']);
 $routes->get('/admin/index', 'AdminHome::index', ['filter' => 'role:admin']);
 
@@ -100,12 +101,6 @@ $routes->post('/transaksiupdate/(:num)', 'AdminTransaksi::update/$1', ['filter' 
 // $routes->post kalau mau buat database
 // $routes->delete kalau mau hapus database??
 
-// collaborative
-$routes->get('/collaborative', 'Collaborative2::index');
-
-// payment midtrans
-$routes->get('/payment', 'Payment::index');
-$routes->get('/payment/index', 'Payment::index');
 
 
 /*

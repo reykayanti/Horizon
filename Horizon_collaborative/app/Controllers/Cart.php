@@ -98,6 +98,7 @@ class Cart extends BaseController
             'tanggal_tour'      =>  $this->request->getVar('tanggal_tour'),
             'jenis_transaksi'   =>  $this->request->getVar('jenis_transaksi'),
             'status_transaksi'  =>  $this->request->getVar('status_transaksi'),
+            'status_tour'       =>  'ongoing',
         ]); 
 
         return redirect()->to('/history');
