@@ -10,6 +10,8 @@ class M_Rating extends Model
     protected $primaryKey = 'id_rating';
     protected $allowedFields = ['id_rating', 'id_produk', 'nilai_rating', 'komentar'];
     protected $useTimestamps = true;
+    protected $createdField  = 'created_rating';
+    protected $updatedField  = 'updated_rating';
 
     public function getRatingPredictions()
     {
