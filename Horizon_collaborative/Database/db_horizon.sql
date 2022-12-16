@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 15, 2022 at 05:45 AM
+-- Generation Time: Dec 16, 2022 at 04:31 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -122,7 +122,12 @@ INSERT INTO `auth_logins` (`id`, `ip_address`, `email`, `user_id`, `date`, `succ
 (9, '::1', 'retnoekayanti15@gmail.com', 2, '2022-12-14 21:42:18', 1),
 (10, '::1', 'retnoekayanti15@gmail.com', 2, '2022-12-14 21:43:27', 1),
 (11, '::1', 'admin@gmail.com', 4, '2022-12-14 22:01:24', 1),
-(12, '::1', 'user1@example.com', 10101, '2022-12-14 22:10:27', 1);
+(12, '::1', 'user1@example.com', 10101, '2022-12-14 22:10:27', 1),
+(13, '::1', 'yanuarmufid@gmail.com', 3, '2022-12-15 03:57:20', 1),
+(14, '::1', 'admin@gmail.com', 4, '2022-12-15 06:30:27', 1),
+(15, '::1', 'yanuarmufid@gmail.com', 3, '2022-12-15 10:54:33', 1),
+(16, '::1', 'admin@gmail.com', 4, '2022-12-16 06:52:33', 1),
+(17, '::1', 'user1@example.com', 10101, '2022-12-16 08:50:22', 1);
 
 -- --------------------------------------------------------
 
@@ -255,31 +260,31 @@ CREATE TABLE `prediksi` (
 --
 
 INSERT INTO `prediksi` (`id`, `id_user`, `id_produk`, `nilai_prediksi`, `nilai_mae`) VALUES
-(0, 10101, 20102, 3.60128, 1.39872),
-(0, 10101, 20103, 1.19496, 0.805037),
-(0, 10101, 20104, 3.14054, 0.140537),
-(0, 10101, 20101, -0.101076, 0.101076),
-(0, 10101, 20105, 5.03812, 0.0381158),
-(0, 10102, 20104, 1.35527, 1.35527),
-(0, 10102, 20102, 0.841707, 0.841707),
-(0, 10102, 20101, 0.51623, 0.51623),
-(0, 10102, 20103, 2.483, 0.482997),
-(0, 10102, 20105, 2.68081, 0.319194),
-(0, 10103, 20101, 0.212425, 0.787575),
-(0, 10103, 20103, 0.56755, 0.56755),
-(0, 10103, 20104, 4.51737, 0.482626),
-(0, 10103, 20105, 3.7107, 0.2893),
-(0, 10103, 20102, 2.85135, 0.148652),
-(0, 10104, 20105, 0.8905, 0.8905),
-(0, 10104, 20101, 0.656571, 0.656571),
-(0, 10104, 20104, 4.35998, 0.64002),
-(0, 10104, 20102, 0.471839, 0.471839),
-(0, 10104, 20103, 1.26721, 0.267212),
-(0, 10105, 20103, 3.48728, 0.512721),
-(0, 10105, 20104, 2.62684, 0.373163),
-(0, 10105, 20105, 1.67988, 0.320122),
-(0, 10105, 20101, 2.71585, 0.284151),
-(0, 10105, 20102, 0.233826, 0.233826);
+(0, 10101, 20101, 1.69408, 1.69408),
+(0, 10101, 20105, 2.51412, 1.48588),
+(0, 10101, 20104, 0.671273, 0.671273),
+(0, 10101, 20103, 2.67395, 0.326046),
+(0, 10101, 20102, 0.189699, 0.189699),
+(0, 10102, 20103, 3.65168, 1.34832),
+(0, 10102, 20101, 1.78492, 1.21508),
+(0, 10102, 20104, 1.19293, 1.19293),
+(0, 10102, 20105, 1.08281, 1.08281),
+(0, 10102, 20102, -0.431321, 0.431321),
+(0, 10103, 20104, -0.827365, 0.827365),
+(0, 10103, 20103, 0.545957, 0.545957),
+(0, 10103, 20102, 2.58646, 0.413537),
+(0, 10103, 20105, 4.11849, 0.118494),
+(0, 10103, 20101, 4.08351, 0.0835133),
+(0, 10104, 20102, -0.938168, 0.938168),
+(0, 10104, 20105, 0.436425, 0.436425),
+(0, 10104, 20101, 0.409546, 0.409546),
+(0, 10104, 20104, 2.73151, 0.268491),
+(0, 10104, 20103, 4.26483, 0.264827),
+(0, 10105, 20102, 1.59333, 1.59333),
+(0, 10105, 20101, 4.02795, 0.972055),
+(0, 10105, 20103, 0.863581, 0.863581),
+(0, 10105, 20104, -0.76835, 0.76835),
+(0, 10105, 20105, 3.84815, 0.151854);
 
 -- --------------------------------------------------------
 
@@ -304,13 +309,11 @@ CREATE TABLE `produk` (
 --
 
 INSERT INTO `produk` (`id_produk`, `id_kategori`, `nama_produk`, `deskripsi_produk`, `harga`, `sampul`, `nilai_mae`, `created_at`, `updated_at`) VALUES
-(20101, 2, '2 Hari 1 Malam [Camping Desa Sembalun]', '<p>Kami menyediakan tour dengan waktu 2 hari 1 malam di daratan tinggi sembalun. Tour ini disajikan untuk anda yang ingin merasakan sensasi camping tapi males mendaki, paket trip ini menjadi solusi yang tepat.</p>\r\n\r\n<hr />\r\n<p><strong>Rencana Perjalanan&nbsp;</strong></p>\r\n\r\n<p>Day 1 :</p>\r\n\r\n<ul>\r\n	<li>Penjemputan di meeting point</li>\r\n	<li>Menuju Desa Sembalun</li>\r\n	<li>Mendirikan tenda</li>\r\n	<li>Menikmati suasana malam di camping ground</li>\r\n	<li>Makan malam</li>\r\n	<li>Istirahat</li>\r\n</ul>\r\n\r\n<p>Day 2 :</p>\r\n\r\n<ul>\r\n	<li>Bangun lebih pagi</li>\r\n	<li>Menikmati susana pagi Sembalun</li>\r\n	<li>Menuju Punck Sembalun</li>\r\n	<li>Petik strawberry</li>\r\n	<li>Sarapan di Kedai Sawah</li>\r\n	<li>Menuju Bukit Selong</li>\r\n	<li>Pengantaran ke meeting point</li>\r\n	<li>Sayonara see you next trip</li>\r\n</ul>\r\n\r\n<hr />\r\n<p>Paket ini memiliki include dan exclude tersendiri.</p>\r\n\r\n<p>Include :</p>\r\n\r\n<ul>\r\n	<li>Mobil + Driver</li>\r\n	<li>Tour Guide</li>\r\n	<li>Perlengkapan camping</li>\r\n	<li>Perlengkapan masak</li>\r\n	<li>Tiket petik strawberry</li>\r\n	<li>Kopi</li>\r\n	<li>Tiket masuk wisata</li>\r\n	<li>Parkir</li>\r\n</ul>\r\n\r\n<p>Exclude :</p>\r\n\r\n<ul>\r\n	<li>Makanan ringan</li>\r\n	<li>Tipping untuk tour guide</li>\r\n	<li>Kebutuhan pribadi</li>\r\n</ul>\r\n\r\n<hr />\r\n<p>Silahkan pesan paket tour mu sekarang dengan cara login terlebih dahulu kemudian isi form order yang ada di samping kanan.&nbsp;</p>\r\n\r\n<p>Jika ada pertanyaan, hubungi kami melalui WhatsApp kami yang berada di pojok kanan bawah.</p>\r\n', '470000', '62886f682fc2a (1).jpg', 0.46912, '0000-00-00 00:00:00', '2022-12-14 22:09:58'),
-(20102, 2, 'Produk 2', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto ea reprehenderit quis exercitationem vel omnis aperiam odit maxime, perferendis necessitatibus accusantium quas dolorum delectus minima placeat sunt quisquam alias quo deleniti molestiae. Repellat dolores est obcaecati, placeat fugiat cupiditate recusandae odit mollitia perspiciatis possimus sapiente quidem, quae facere cumque nostrum? tets</p>\r\n', '30', 'b.jpg', 0.618949, '2022-11-15 08:16:53', '2022-12-14 22:11:11'),
-(20103, 3, 'Produk 3', '<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti, quam laborum ratione veniam odit deleniti voluptas harum rem ipsum dolorem vero ad ex doloribus impedit quas nisi beatae ducimus debitis earum iure. Ducimus eligendi, sit aliquid eaque numquam voluptates minima, possimus atque modi id asperiores voluptate omnis necessitatibus quasi corrupti.</p>\r\n\r\n<p><img alt=\"\" src=\"https://images.unsplash.com/photo-1657214059175-53cb22261d38?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=435&amp;q=80\" style=\"height:400px; width:300px\" /></p>\r\n', '32', 'c.jpg', 0.527103, '2022-11-15 08:38:15', '2022-12-14 21:28:01'),
-(20104, 1, 'Produk 4', '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos atque assumenda, nobis officiis quaerat aliquid natus fuga! Accusamus ab saepe voluptatum deserunt obcaecati vel, a eius fugiat! Quo laborum nulla veniam sapiente ad non dolores perspiciatis illum impedit, nesciunt minima atque accusamus culpa delectus alias quaerat. Illum deleniti architecto quod quos voluptates incidunt. Possimus eos rerum facere totam eum est odio pariatur obcaecati, impedit, quaerat excepturi qui, ut velit vero. Illum eligendi magnam quia sed architecto consequuntur porro dolore nam aliquam id, dignissimos laudantium adipisci et saepe blanditiis nihil nostrum incidunt facere similique illo sapiente commodi dolores. Cum, vel iste?</p>\r\n', '100', 'a.jpg', 0.598324, '2022-11-15 09:07:23', '2022-12-14 21:28:01'),
-(20105, 2, 'Produk 5', 'gaada', '70', '', 0.371446, '2022-11-21 03:53:50', '2022-12-14 21:28:01'),
-(20106, 4, 'Produk 6', 'gaada', '70', '', 0, '2022-11-21 03:53:50', '2022-12-13 10:04:12'),
-(20107, 2, 'Produk 7', 'gaada', '70', '', 0, '2022-11-21 03:53:50', '2022-12-13 10:04:12');
+(20101, 2, '2 Hari 1 Malam [Camping Desa Sembalun]', '<p>Kami menyediakan tour dengan waktu 2 hari 1 malam di daratan tinggi sembalun. Tour ini disajikan untuk anda yang ingin merasakan sensasi camping tapi males mendaki, paket trip ini menjadi solusi yang tepat.</p>\n\n<hr />\n<p><strong>Rencana Perjalanan&nbsp;</strong></p>\n\n<p>Day 1 :</p>\n\n<ul>\n	<li>Penjemputan di meeting point</li>\n	<li>Menuju Desa Sembalun</li>\n	<li>Mendirikan tenda</li>\n	<li>Menikmati suasana malam di camping ground</li>\n	<li>Makan malam</li>\n	<li>Istirahat</li>\n</ul>\n\n<p>Day 2 :</p>\n\n<ul>\n	<li>Bangun lebih pagi</li>\n	<li>Menikmati susana pagi Sembalun</li>\n	<li>Menuju Punck Sembalun</li>\n	<li>Petik strawberry</li>\n	<li>Sarapan di Kedai Sawah</li>\n	<li>Menuju Bukit Selong</li>\n	<li>Pengantaran ke meeting point</li>\n	<li>Sayonara see you next trip</li>\n</ul>\n\n<hr />\n<p>Paket ini memiliki include dan exclude tersendiri.</p>\n\n<p>Include :</p>\n\n<ul>\n	<li>Mobil + Driver</li>\n	<li>Tour Guide</li>\n	<li>Perlengkapan camping</li>\n	<li>Perlengkapan masak</li>\n	<li>Tiket petik strawberry</li>\n	<li>Kopi</li>\n	<li>Tiket masuk wisata</li>\n	<li>Parkir</li>\n</ul>\n\n<p>Exclude :</p>\n\n<ul>\n	<li>Makanan ringan</li>\n	<li>Tipping untuk tour guide</li>\n	<li>Kebutuhan pribadi</li>\n</ul>\n\n<hr />\n<p>Silahkan pesan paket tour mu sekarang dengan cara login terlebih dahulu kemudian isi form order yang ada di samping kanan.&nbsp;</p>\n\n<p>Jika ada pertanyaan, hubungi kami melalui WhatsApp kami yang berada di pojok kanan bawah.</p>\n', '470000', '62886f682fc2a (1).jpg', 0.874855, '0000-00-00 00:00:00', '2022-12-16 08:54:29'),
+(20102, 2, 'Produk 2', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto ea reprehenderit quis exercitationem vel omnis aperiam odit maxime, perferendis necessitatibus accusantium quas dolorum delectus minima placeat sunt quisquam alias quo deleniti molestiae. Repellat dolores est obcaecati, placeat fugiat cupiditate recusandae odit mollitia perspiciatis possimus sapiente quidem, quae facere cumque nostrum? tets</p>\r\n', '250000', 'b.jpg', 0.71321, '2022-11-15 08:16:53', '2022-12-16 08:54:29'),
+(20103, 3, 'Produk 3', '<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti, quam laborum ratione veniam odit deleniti voluptas harum rem ipsum dolorem vero ad ex doloribus impedit quas nisi beatae ducimus debitis earum iure. Ducimus eligendi, sit aliquid eaque numquam voluptates minima, possimus atque modi id asperiores voluptate omnis necessitatibus quasi corrupti.</p>\r\n\r\n<p><img alt=\"\" src=\"https://images.unsplash.com/photo-1657214059175-53cb22261d38?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=435&amp;q=80\" style=\"height:400px; width:300px\" /></p>\r\n', '375000', 'c.jpg', 0.669746, '2022-11-15 08:38:15', '2022-12-16 08:54:29'),
+(20104, 1, 'Produk 4', '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos atque assumenda, nobis officiis quaerat aliquid natus fuga! Accusamus ab saepe voluptatum deserunt obcaecati vel, a eius fugiat! Quo laborum nulla veniam sapiente ad non dolores perspiciatis illum impedit, nesciunt minima atque accusamus culpa delectus alias quaerat. Illum deleniti architecto quod quos voluptates incidunt. Possimus eos rerum facere totam eum est odio pariatur obcaecati, impedit, quaerat excepturi qui, ut velit vero. Illum eligendi magnam quia sed architecto consequuntur porro dolore nam aliquam id, dignissimos laudantium adipisci et saepe blanditiis nihil nostrum incidunt facere similique illo sapiente commodi dolores. Cum, vel iste?</p>\r\n', '450000', 'a.jpg', 0.745682, '2022-11-15 09:07:23', '2022-12-16 08:54:29'),
+(20105, 2, 'Produk 5', '<p>Kami menyediakan tour dengan waktu 2 hari 1 malam di daratan tinggi sembalun. Tour ini disajikan untuk anda yang ingin merasakan sensasi camping tapi males mendaki, paket trip ini menjadi solusi yang tepat.</p>\n', '860000', 'c.jpg', 0.655093, '2022-11-21 03:53:50', '2022-12-16 08:54:29');
 
 --
 -- Triggers `produk`
@@ -343,22 +346,17 @@ CREATE TABLE `rating` (
 --
 
 INSERT INTO `rating` (`id_rating`, `id`, `id_produk`, `nilai_rating`, `komentar`, `created_rating`, `updated_rating`) VALUES
-(30103, 10103, 20101, 1, NULL, '2022-12-12 23:54:33', '2022-12-12 23:54:33'),
-(30105, 10105, 20101, 3, NULL, '2022-12-12 23:54:33', '2022-12-12 23:54:33'),
-(30106, 10101, 20102, 5, NULL, '2022-12-12 23:54:33', '2022-12-12 23:54:33'),
-(30108, 10103, 20102, 3, NULL, '2022-12-12 23:54:33', '2022-12-12 23:54:33'),
-(30111, 10101, 20103, 2, NULL, '2022-12-12 23:54:33', '2022-12-12 23:54:33'),
-(30112, 10102, 20103, 2, NULL, '2022-12-12 23:54:33', '2022-12-12 23:54:33'),
-(30114, 10104, 20103, 1, NULL, '2022-12-12 23:54:33', '2022-12-12 23:54:33'),
-(30115, 10105, 20103, 4, NULL, '2022-12-12 23:54:33', '2022-12-12 23:54:33'),
-(30116, 10101, 20104, 3, NULL, '2022-12-12 23:54:33', '2022-12-12 23:54:33'),
-(30118, 10103, 20104, 5, NULL, '2022-12-12 23:54:33', '2022-12-12 23:54:33'),
-(30119, 10104, 20104, 5, NULL, '2022-12-12 23:54:33', '2022-12-12 23:54:33'),
-(30120, 10105, 20104, 3, NULL, '2022-12-12 23:54:33', '2022-12-12 23:54:33'),
-(30121, 10101, 20105, 5, NULL, '2022-12-12 23:54:33', '2022-12-12 23:54:33'),
-(30122, 10102, 20105, 3, NULL, '2022-12-12 23:54:33', '2022-12-12 23:54:33'),
-(30123, 10103, 20105, 4, NULL, '2022-12-12 23:54:33', '2022-12-12 23:54:33'),
-(30125, 10105, 20105, 2, NULL, '2022-12-12 23:54:33', '2022-12-12 23:54:33');
+(30132, 10102, 20101, 3, 'Memuaskan menurut saya, namun harganya cukup mahal hanya untuk camping', '2022-12-15 12:21:27', '2022-12-16 12:41:55'),
+(30133, 10103, 20101, 4, 'tour guidenya ramah dan baik banget. perjalanan juga menyenangkan', '2022-12-15 12:21:27', '2022-12-16 12:40:27'),
+(30134, 10105, 20101, 5, 'GA NYESEL TOUR DISINI!! Makasih horizon', '2022-12-15 12:21:27', '2022-12-16 12:41:10'),
+(30135, 10103, 20102, 3, NULL, '2022-12-15 12:22:15', '2022-12-15 12:22:15'),
+(30136, 10101, 20103, 3, NULL, '2022-12-15 12:23:11', '2022-12-15 12:23:11'),
+(30137, 10102, 20103, 5, NULL, '2022-12-15 12:23:11', '2022-12-15 12:23:11'),
+(30138, 10104, 20103, 4, NULL, '2022-12-15 12:23:11', '2022-12-15 12:23:11'),
+(30139, 10104, 20104, 3, NULL, '2022-12-15 12:23:38', '2022-12-15 12:23:38'),
+(30140, 10101, 20105, 4, NULL, '2022-12-15 12:24:28', '2022-12-15 12:24:28'),
+(30141, 10103, 20105, 4, NULL, '2022-12-15 12:24:28', '2022-12-15 12:24:28'),
+(30142, 10105, 20105, 4, NULL, '2022-12-15 12:24:28', '2022-12-15 12:24:28');
 
 -- --------------------------------------------------------
 
@@ -420,11 +418,11 @@ INSERT INTO `users` (`id`, `email`, `username`, `fullname`, `birthday`, `phone_n
 (2, 'retnoekayanti15@gmail.com', 'reykayanti', 'Retno Ekayanti', NULL, '6289650017574', 'reykayanti', 'Indonesia', 'Depok', 'default.png', '$2y$10$73s6v4yRBnVu6Th8872Cg.lQBJ39vT.8YkKWPDe7JogW/LGuwPNBy', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2022-11-11 10:05:16', '2022-11-11 10:05:16', NULL),
 (3, 'yanuarmufid@gmail.com', 'yanuar', NULL, NULL, NULL, NULL, NULL, NULL, 'default.png', '$2y$10$52pMFoIq6LV5YDLnW7M6xOxl5oFU1fxMWLb.k6CnlVX51Pd.AYDkC', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2022-11-11 23:36:23', '2022-11-11 23:36:23', NULL),
 (4, 'admin@gmail.com', 'admin', 'Adminila', '2001-03-15', '6289650017574', 'adminila_', 'Indonesia', 'Depok', 'default.png', '$2y$10$ZgbReWD18hilduLXuPN9DexZ3VHWd1fiIS0oaEsie6FR6WkIAVHGG', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2022-11-12 01:34:18', '2022-11-12 01:34:18', NULL),
-(10101, 'user1@example.com', 'user1', NULL, NULL, NULL, NULL, NULL, NULL, 'default.png', '$2y$10$73s6v4yRBnVu6Th8872Cg.lQBJ39vT.8YkKWPDe7JogW/LGuwPNBy', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2022-11-21 03:55:36', '2022-11-21 03:55:36', NULL),
-(10102, 'user2@example.com', 'user2', NULL, NULL, NULL, NULL, NULL, NULL, 'default.png', '$2y$10$lk/KmFVyROM8ITG87h6NSO7O0RH9rJLo21KD1veDhlSCY.83dK2Sa', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2022-11-21 03:56:40', '2022-11-21 03:56:40', NULL),
-(10103, 'user3@example.com', 'user3', NULL, NULL, NULL, NULL, NULL, NULL, 'default.png', '$2y$10$lk/KmFVyROM8ITG87h6NSO7O0RH9rJLo21KD1veDhlSCY.83dK2Sa', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2022-11-21 03:56:40', '2022-11-21 03:56:40', NULL),
-(10104, 'user4@example.com', 'user4', NULL, NULL, NULL, NULL, NULL, NULL, 'default.png', '$2y$10$lk/KmFVyROM8ITG87h6NSO7O0RH9rJLo21KD1veDhlSCY.83dK2Sa', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2022-11-21 03:57:10', '2022-11-21 03:57:10', NULL),
-(10105, 'user5@example.com', 'user5', NULL, NULL, NULL, NULL, NULL, NULL, 'default.png', '$2y$10$lk/KmFVyROM8ITG87h6NSO7O0RH9rJLo21KD1veDhlSCY.83dK2Sa', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2022-11-21 03:57:10', '2022-11-21 03:57:10', NULL),
+(10101, 'user1@example.com', 'usera', 'User Alfa', '1996-12-01', '6289650017574', 'useralfa12', 'Indonesia', 'Bogor', 'default.png', '$2y$10$73s6v4yRBnVu6Th8872Cg.lQBJ39vT.8YkKWPDe7JogW/LGuwPNBy', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2022-11-21 03:55:36', '2022-11-21 03:55:36', NULL),
+(10102, 'user2@example.com', 'userb', 'User Bravo', NULL, NULL, NULL, NULL, NULL, 'default.png', '$2y$10$lk/KmFVyROM8ITG87h6NSO7O0RH9rJLo21KD1veDhlSCY.83dK2Sa', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2022-11-21 03:56:40', '2022-11-21 03:56:40', NULL),
+(10103, 'user3@example.com', 'userc', 'User Charlie', NULL, NULL, NULL, NULL, NULL, 'default.png', '$2y$10$lk/KmFVyROM8ITG87h6NSO7O0RH9rJLo21KD1veDhlSCY.83dK2Sa', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2022-11-21 03:56:40', '2022-11-21 03:56:40', NULL),
+(10104, 'user4@example.com', 'userd', 'User Delta', NULL, NULL, NULL, NULL, NULL, 'default.png', '$2y$10$lk/KmFVyROM8ITG87h6NSO7O0RH9rJLo21KD1veDhlSCY.83dK2Sa', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2022-11-21 03:57:10', '2022-11-21 03:57:10', NULL),
+(10105, 'user5@example.com', 'usere', 'User Echo', NULL, NULL, NULL, NULL, NULL, 'default.png', '$2y$10$lk/KmFVyROM8ITG87h6NSO7O0RH9rJLo21KD1veDhlSCY.83dK2Sa', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2022-11-21 03:57:10', '2022-11-21 03:57:10', NULL),
 (10106, 'user6@example.com', 'user6', NULL, NULL, NULL, NULL, NULL, NULL, 'default.png', '$2y$10$lk/KmFVyROM8ITG87h6NSO7O0RH9rJLo21KD1veDhlSCY.83dK2Sa', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2022-11-21 03:57:10', '2022-11-21 03:57:10', NULL);
 
 --
@@ -556,7 +554,7 @@ ALTER TABLE `auth_groups`
 -- AUTO_INCREMENT for table `auth_logins`
 --
 ALTER TABLE `auth_logins`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `auth_permissions`
@@ -586,7 +584,7 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT for table `keranjang`
 --
 ALTER TABLE `keranjang`
-  MODIFY `id_keranjang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_keranjang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -604,13 +602,13 @@ ALTER TABLE `produk`
 -- AUTO_INCREMENT for table `rating`
 --
 ALTER TABLE `rating`
-  MODIFY `id_rating` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30132;
+  MODIFY `id_rating` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30146;
 
 --
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8500394;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8500400;
 
 --
 -- AUTO_INCREMENT for table `users`
