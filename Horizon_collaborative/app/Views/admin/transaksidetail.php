@@ -23,27 +23,27 @@
                 <table style="margin-top: 10px;">
                     <tr>
                     <td style="width: 10px;">Name</td>
-                    <td style="width: 70%;"><?= user()->fullname; ?></td>
+                    <td style="width: 70%;"><?= $transaksi->fullname; ?></td>
                     </tr>
                     <tr>
                     <td>Country</td>
-                    <td><?= user()->country; ?></td>
+                    <td><?= $transaksi->country; ?></td>
                     </tr>
                     <tr>
                     <td>City</td>
-                    <td><?= user()->city; ?></td>
+                    <td><?= $transaksi->city; ?></td>
                     </tr>
                     <tr>
                     <td>Email</td>
-                    <td><?= user()->email; ?></td>
+                    <td><?= $transaksi->email; ?></td>
                     </tr>
                     <tr>
                     <td>Birthday</td>
-                    <td><?= user()->birthday; ?></td>
+                    <td><?= $transaksi->birthday; ?></td>
                     </tr>
                     <tr>
                     <td>Phone Number</td>
-                    <td><?= user()->phone_number; ?></td>
+                    <td><?= $transaksi->phone_number; ?></td>
                     </tr>
                     <tr>
                         <td>Tanggal Pemesanan</td>
