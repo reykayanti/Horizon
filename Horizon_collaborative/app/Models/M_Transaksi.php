@@ -45,6 +45,7 @@ class M_Transaksi extends Model
         ')
         ->join('produk', 'produk.id_produk = transaksi.id_produk')
         ->join('rating', 'transaksi.id_produk = rating.id_produk')
+        ->where('transaksi.id = ' . $id)
         ->where('rating.id = ' . $id)
         ->get();  
         return $query;

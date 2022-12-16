@@ -8,7 +8,7 @@ class M_Rating extends Model
 {
     protected $table      = 'rating';
     protected $primaryKey = 'id_rating';
-    protected $allowedFields = ['id_rating', 'id_produk', 'nilai_rating', 'komentar'];
+    protected $allowedFields = ['id_rating','id', 'id_produk', 'nilai_rating', 'komentar'];
     protected $useTimestamps = true;
     protected $createdField  = 'created_rating';
     protected $updatedField  = 'updated_rating';

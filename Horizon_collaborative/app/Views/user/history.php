@@ -16,7 +16,7 @@
     </header>
     <div id="overlay" onclick="off()"></div>
 
-    
+    <!-- </?php dd($history); ?> -->
     <div class="history">
         <?php if ($history == null) : ?>
             <div class="kosong">
