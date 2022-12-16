@@ -35,6 +35,9 @@ class Home extends BaseController
 
     public function index()
     {
+        $predictionClass = new Prediction;
+        $predictionClass->update();
+
         $iduser = user()->id ?? null; 
         $role = $this->cekrole($iduser);
         $rolee = $role->role ?? null; 
@@ -46,7 +49,8 @@ class Home extends BaseController
             'title'     => 'Horizon Tour and Travel',
             'produk'    => $produk,
             'kategori'  => $kategori,
-            'role'      => $rolee
+            'role'      => $rolee,
+            'predictionClass' => $predictionClass,
         ];
         
         if (in_groups('admin')){

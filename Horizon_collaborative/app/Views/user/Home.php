@@ -84,4 +84,21 @@
       </div>
     </div>
 
+    <!-- <div class="about">
+      <div class="pic">
+      </div>
+      <div class="keterangan"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum facere ipsam blanditiis magnam quia iste! Amet, ratione quia. Maiores quas deleniti amet quae dolor ipsum doloremque, enim ratione laudantium vitae inventore est illum iure culpa impedit quia saepe ullam ad aliquid natus fugit placeat harum! Maxime blanditiis molestiae fugit exercitationem?</div>
+    </div> -->
+
+    <!-- hasil collaborative filtering -->
+    <?php if ($predictionClass->userIdRated) : ?>
+        <?= view('home/formula-recomendation-for-user', ['predictionClass' => $predictionClass]); ?>
+    <?php else : ?>
+        <?= view('home/formula-recomendation-for-guest', ['predictionClass' => $predictionClass]); ?>
+    <?php endif ?>
+          
+          
+         
+      
+
     <?= $this->endSection(); ?>

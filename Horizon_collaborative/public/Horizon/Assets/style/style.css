@@ -184,20 +184,21 @@ header .loginfront {
   border-radius: 100px;
   color: black;
 }
+/* about */
 /* travel recommendation */
 .travel-recommendation {
-  height: 400px;
+  height: 250px;
   background-image: url("../img/a.jpg");
   background-size: cover;
   background-position: center;
 }
 .travel-recommendation .shadow {
-  height: 400px;
+  height: 250px;
   background: linear-gradient(#00000067, #000000cc);
 }
 .travel-recommendation h1 {
   font-size: 40px;
-  padding: 150px 200px 0 200px;
+  padding: 70px 200px 0 200px;
   color: white;
 }
 footer {

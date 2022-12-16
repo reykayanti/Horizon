@@ -1,6 +1,5 @@
 <fieldset>
     <legend>Tabel Similarity</legend>
-
     <table>
         <tr>
             <th>Similarity</th>

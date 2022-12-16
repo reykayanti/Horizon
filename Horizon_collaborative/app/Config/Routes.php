@@ -38,11 +38,11 @@ $routes->set404Override();
 $routes->get('/formula', 'Home::formula'); //collaborative filtering
 
 $routes->get('/', 'Home::index');
-$routes->get('/homeedit', 'Home::homeedit', ['filter' => 'role:user']);
-$routes->get('/tour', 'Home::tour', ['filter' => 'role:user']);
-$routes->get('/trekking', 'Home::trekking', ['filter' => 'role:user']);
-$routes->get('/detailtour', 'Home::detailtour', ['filter' => 'role:user']); 
-$routes->get('/detailtour/(:num)', 'Home::detailtour/$1', ['filter' => 'role:user']); //detail tour
+$routes->get('/homeedit', 'Home::homeedit', );
+$routes->get('/tour', 'Home::tour', );
+$routes->get('/trekking', 'Home::trekking', );
+$routes->get('/detailtour', 'Home::detailtour', ); 
+$routes->get('/detailtour/(:num)', 'Home::detailtour/$1', ); //detail tour
 
 $routes->get('/profile', 'Profile::index', ['filter' => 'role:user']);
 $routes->post('/profile/update/(:num)', 'Profile::update/$1', ['filter' => 'role:user']);
