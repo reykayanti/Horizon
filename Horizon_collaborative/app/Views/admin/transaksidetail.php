@@ -78,17 +78,24 @@
                     <tr>
                         <td>Status Transaksi</td>
                         <td>
-                        <?php if($transaksi->bukti_transaksi == null): ?>
-                            <?= $transaksi->status_transaksi; ?>
-                        <?php elseif($transaksi->bukti_transaksi == !null): ?>
-                            <select name="status_transaksi" id="status_transaksi" style="padding: 3px; font-size:12px; width:100%;">
-                                <option value="proses" <?php if($transaksi->status_transaksi == 'proses'): ?> selected <?php endif; ?>>Proses</option>
-                                <option value="paid" <?php if($transaksi->status_transaksi == 'paid'): ?> selected <?php endif; ?>>Paid</option>
-                            </select>
-                            <?php if($transaksi->status_transaksi == 'proses'): ?>
-                                <small>*ubah status transaksi menjadi <b>paid</b> jika bukti transaksi telah sesuai</small>
+                            <?php if($transaksi->jenis_transaksi == 'cod'): ?>
+                                <select name="status_transaksi" id="status_transaksi" style="padding: 3px; font-size:12px; width:100%;">
+                                        <option value="unpaid" <?php if($transaksi->status_transaksi == 'unpaid'): ?> selected <?php endif; ?>>Unpaid</option>
+                                        <option value="paid" <?php if($transaksi->status_transaksi == 'paid'): ?> selected <?php endif; ?>>Paid</option>
+                                </select>
+                            <?php else: ?>
+                                <?php if($transaksi->bukti_transaksi == null): ?>
+                                    <?= $transaksi->status_transaksi; ?>
+                                <?php elseif($transaksi->bukti_transaksi == !null): ?>
+                                    <select name="status_transaksi" id="status_transaksi" style="padding: 3px; font-size:12px; width:100%;">
+                                        <option value="proses" <?php if($transaksi->status_transaksi == 'proses'): ?> selected <?php endif; ?>>Proses</option>
+                                        <option value="paid" <?php if($transaksi->status_transaksi == 'paid'): ?> selected <?php endif; ?>>Paid</option>
+                                    </select>
+                                    <?php if($transaksi->status_transaksi == 'proses'): ?>
+                                        <small>*ubah status transaksi menjadi <b>paid</b> jika bukti transaksi telah sesuai</small>
+                                    <?php endif; ?>
+                                <?php endif; ?>
                             <?php endif; ?>
-                        <?php endif; ?>
                         </td>
                     </tr>
                     <tr>
