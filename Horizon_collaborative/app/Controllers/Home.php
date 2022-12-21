@@ -35,6 +35,10 @@ class Home extends BaseController
 
     public function index()
     {
+        if (in_groups('admin')){
+            return redirect()->to('/admin');
+        } 
+
         $predictionClass = new Prediction;
         $predictionClass->update();
 
@@ -50,15 +54,10 @@ class Home extends BaseController
             'produk'    => $produk,
             'kategori'  => $kategori,
             'role'      => $rolee,
-            'predictionClass' => $predictionClass,
+            'predictionClass' => $predictionClass
         ];
         
-        if (in_groups('admin')){
-            return redirect()->to('/admin');
-        } else{
             return view('user/Home', $data);
-        }
-
     }
 
     public function homeedit()
