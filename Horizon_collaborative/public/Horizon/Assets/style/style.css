@@ -130,12 +130,12 @@ header .loginfront {
   background-repeat: no-repeat;
   background-size: cover;
   width: 350px;
-  height: 200px;
+  height: 180px;
 }
 .card-post .shadow-card {
   position: absolute;
   width: 350px;
-  height: 200px;
+  height: 180px;
   background: linear-gradient(#00000025, #00000077);
   display: flex;
 }
