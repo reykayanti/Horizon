@@ -4,7 +4,6 @@
     <table>
         <tr>
             <th>Rating</th>
-
             <?php foreach ($predictionClass->ratings->users as $user) : ?>
                 <th class="text-center <?= $predictionClass->userIdRated == $user->id ? 'current-user' : '' ?>">
                     <?= $user->name ?>
@@ -33,5 +32,7 @@
                 </th>
             </tr>
         <?php endforeach ?>
+
+        
     </table>
 </fieldset>
