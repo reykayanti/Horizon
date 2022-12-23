@@ -29,6 +29,7 @@
         <!-- </?= $predictionClass->user()->username ?? 'Guest'; ?> -->
         <?= user()->username ?? 'Guest'; ?>
     </h1>
+    <!-- </?php dd($predictionClass->predictions->predictions); ?> -->
     <!-- section perhitungan -->
     <?= view('home/formula-rating', ['predictionClass' => $predictionClass]); ?>
     <?= view('home/formula-similiarity', ['predictionClass' => $predictionClass]); ?>
@@ -37,6 +38,7 @@
     <!-- section perhitungan -->
 
     <h1>Urutan Produk yang Disarankan</h1>
+
 
     <?php if ($predictionClass->userIdRated) : ?>
         <?= view('home/formula-recomendation-for-user', ['predictionClass' => $predictionClass]); ?>
