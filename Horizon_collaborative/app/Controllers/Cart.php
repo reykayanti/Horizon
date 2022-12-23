@@ -85,10 +85,10 @@ class Cart extends BaseController
 
         $this->mKeranjang->delete($id_keranjang);
 
-        $this->mRating->save([
-            'id'                =>  user()->id,
-            'id_produk'         =>  $this->request->getVar('id_produk'),
-        ]);    
+        // $this->mRating->save([
+        //     'id'                =>  user()->id,
+        //     'id_produk'         =>  $this->request->getVar('id_produk'),
+        // ]);    
 
         $this->mTransaksi->save([
             'id_produk'         =>  $this->request->getVar('id_produk'),
