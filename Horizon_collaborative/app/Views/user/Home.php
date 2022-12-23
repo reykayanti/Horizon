@@ -24,6 +24,7 @@
         </div>
       </div>
     </header>
+
     
     <div class="main-lates">
       <center>
@@ -31,6 +32,7 @@
       </center>
       <div class="list-product">
         <div class="list-post">
+      
           
           <?php foreach($produk as $prod): ?>
           <a href="/detailtour/<?= $prod['idproduk']; ?>">
@@ -69,6 +71,7 @@
           </a>
           <?php endforeach; ?>
          
+    
         </div>
       </div>
       <div class="btn-more">
@@ -97,8 +100,7 @@
         <?= view('home/formula-recomendation-for-guest', ['predictionClass' => $predictionClass]); ?>
     <?php endif ?>
           
-          
-         
+  
       
 
     <?= $this->endSection(); ?>
