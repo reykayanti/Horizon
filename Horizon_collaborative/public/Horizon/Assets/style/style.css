@@ -782,3 +782,6 @@ footer {
     width: 25%;
   }
 }
+#toolbarContainer {
+  display: none;
+}

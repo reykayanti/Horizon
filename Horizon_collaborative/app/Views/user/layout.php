@@ -13,6 +13,11 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <style>
+      #toolbarContainer {
+      display: none;
+    }
+    </style>
 
     <title><?= $title; ?></title>
   </head>
@@ -67,7 +72,6 @@
 </a>
     <footer>© Horizon Tour and Travel <?= date('Y'); ?> | Designed by Retno Ekayanti</footer>
     <!-- modal -->
-   
 
     <script>
       window.onload = function () {
